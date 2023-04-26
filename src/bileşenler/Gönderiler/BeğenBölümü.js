@@ -8,7 +8,7 @@ import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
 
 const BeğenBölümü = props => {
   // 🔥 Bu bileşenin parentının aşağıdaki propları düzgün gönderdiğinden emin olun.
-  const { gonderiyiBegen, begeniSayisi } = props;
+  const { gonderiyiBegen, begeniGonder } = props;
 
   return (
     <div>
@@ -16,14 +16,14 @@ const BeğenBölümü = props => {
         className='like-section'
         key='likes-icons-container'
       >
-        <div className='like-section-wrapper'>
+        <div onClick={() => gonderiyiBegen()} className='like-section-wrapper'>
           <FontAwesomeIcon icon={faHeart} />
         </div>
         <div className='like-section-wrapper'>
           <FontAwesomeIcon icon={faComment} />
         </div>
       </div>
-      <p className='like-number'>100 likes</p>
+      <p className='like-number'>{begeniGonder} likes</p>
     </div>
   );
 };
